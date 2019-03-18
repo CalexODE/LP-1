@@ -1,19 +1,18 @@
-#include <string.h>
+#include <string>
 
 class CadastrodeClientes
 {
 private:
-	string nome;
-	string telefone;
-	string email;
+	std::string nome;
+	std::string telefone;
+	std::string email;
 public:
-	void setNome(string);
-	string getNome(void);
+	void setNome(std::string);
+	std::string getNome(void);
 	
-	void setTelefone(string);
-	string getTelefone(void);
+	void setTelefone(std::string);
+	std::string getTelefone(void);
 
-	void setEmail(string);
-	string getEmail(void);
-
+	void setEmail(std::string);
+	std::string getEmail(void);
 };

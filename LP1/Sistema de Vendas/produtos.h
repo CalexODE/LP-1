@@ -1,3 +1,5 @@
+#include <string>
+
 class produtos
 {
 private:
@@ -6,5 +8,5 @@ private:
 	string codigo;
 	float valor_venda;
 public:
-	
+	//faz de conta que aqui tem metodos set & get
 }

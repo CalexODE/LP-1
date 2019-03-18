@@ -5,6 +5,6 @@ class vendas
 private:
 	
 public:
-	bool compraAVista();
-	
+	bool comprarAVista();
+	bool comprarParcelado();
 };

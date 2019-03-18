@@ -1,24 +1,28 @@
 #include <string>
-#include <produtos.h>
+#include "produtos.h"
 
-typedef campos
+using namespace std;
+
+typedef struct
 {
 	string nome;
 	string razao_social;
 	string cnpj_cpf;
 	string telefone;
 	string email;
-};
-typedef produto
+}campos;
+
+typedef struct
 {
 	string id_produto;
-	float valor
-};
+	float valor;
+}produto;
+
 class destribuidores
 {
 private:
 	long id;
 
 public:
-	
+	void setId(long);
 };
