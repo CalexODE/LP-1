@@ -24,5 +24,5 @@ private:
 	long id;
 
 public:
-	void setId(long);
+	//Faz de conta que aqui tem metodos set & get
 };

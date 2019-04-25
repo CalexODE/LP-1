@@ -6,10 +6,6 @@ using namespace std;
 
 int main()
 {
-	string name;
-
-	cout << "name: " << endl;
-	//CadastrodeClientes CC;
-	//CC.setNome("alexandre");
+	
 	return 0;
 }

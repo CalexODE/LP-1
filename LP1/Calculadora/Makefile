@@ -1,4 +1,4 @@
-soma.o: soma.cpp soma.h
+soma.:o soma.cpp soma.h
 	g++ soma.cpp -c
 
 sub.o: sub.cpp sub.h
