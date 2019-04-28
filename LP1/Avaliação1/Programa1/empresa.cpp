@@ -65,10 +65,11 @@ void Empresa::novoFuncionario(string nome, string cpf, float salario)
 
 }
 
-void Empresa::mostraFunc(int n)
+void Empresa::mostraFuncionario(int n)
 {
 	vector<Funcionario>::iterator i;
 	i = vetFunc.begin();
 	cout << " size: "<<vetFunc.size()<<endl;
-	cout<<"Nome: "<<(i+n)->getNome()<<" CPF: "<<(i+n)->getCpf()<<" Salario: "<<(i+n)->getSalario()<<endl;
+	cout<<"Nome: "<<(i+n)->getNome()<<" CPF: "<<(i+n)->getCpf()<<" Salario: "<<(i+n)->getSalario();
+	(i+n)->getData();
 }

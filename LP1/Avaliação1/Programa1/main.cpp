@@ -3,11 +3,9 @@
 
 #include <vector>
 #include <iostream>
-
+#include <time.h>
 int main()
 {
-
-
 	Empresa emp1;
 	emp1.novoFuncionario("Alexandre", "123345567", 123.4);
 	emp1.mostraFuncionario(0);
@@ -18,6 +16,19 @@ int main()
 	emp1.mostraFuncionario(0);
 
 	/**
+	time_t timer;
+  	struct tm *horarioLocal;
+
+  	time(&timer); // Obtem informações de data e hora
+  	horarioLocal = localtime(&timer); // Converte a hora atual para a hora local
+
+  	int dia = horarioLocal->tm_mday;
+  	int mes = horarioLocal->tm_mon + 1;
+	int ano = horarioLocal->tm_year + 1900;
+
+	std::cout<< dia <<"/"<<mes<<"/"<<ano<<std::endl;
+
+
 	std::vector<Funcionario> vetFunc;
 
 	Funcionario func1;

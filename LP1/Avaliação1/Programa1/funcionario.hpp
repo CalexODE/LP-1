@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <time.h>
 
 using std::string;
 
@@ -25,6 +26,9 @@ public:
 
 	void setCpf(string cpf);
 	string getCpf();
+
+	//Alterar Implementação
+	void getData();
 
 	bool operator==(Funcionario &f);
 };
