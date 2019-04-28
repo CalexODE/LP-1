@@ -2,6 +2,7 @@
 
 #include <string>
 #include <iostream>
+
 #include <vector>
 using namespace std;
 
@@ -24,4 +25,7 @@ public:
 
 	void novoFuncionario(string nome, string cpf, float salario);
 	void mostraFuncionario(int n);
+	void tFuncionarios();
+
+	void aumentoSalario(float perc);
 };

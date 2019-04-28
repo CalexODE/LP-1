@@ -74,3 +74,10 @@ bool Funcionario::operator==(Funcionario  &t)
 		return false;
 	}
 }
+
+//Sobrecarga <<
+std::ostream& operator<<(std::ostream &O, Funcionario const f)
+{
+	O << "Nome: "<<f.nome << " CPF: " <<f.cpf <<" Salario: "<<f.salario;
+	return O;
+}

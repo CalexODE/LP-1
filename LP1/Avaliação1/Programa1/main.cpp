@@ -10,12 +10,28 @@ int main()
 	emp1.novoFuncionario("Alexandre", "123345567", 123.4);
 	emp1.mostraFuncionario(0);
 
-	emp1.novoFuncionario("Aline", "123345567", 234.3);
+	emp1.novoFuncionario("Aline", "12345567", 234.3);
 	std::cout<< "hora de mostrar"<<std::endl;
-	emp1.mostraFuncionario(0);
+	emp1.mostraFuncionario(1);
 	emp1.mostraFuncionario(0);
 
+	emp1.tFuncionarios();
+
+	emp1.aumentoSalario(100.0);
+
 	/**
+	std::vector<int> vetFunc;
+
+	//Funcionario func1;
+	//func1.setNome("Alexandre");
+	vetFunc.push_back(12);
+
+	std::vector<int>::iterator i;
+
+	i = vetFunc.begin();
+
+	std::cout << vetFunc << std::endl;
+
 	time_t timer;
   	struct tm *horarioLocal;
 
@@ -29,17 +45,6 @@ int main()
 	std::cout<< dia <<"/"<<mes<<"/"<<ano<<std::endl;
 
 
-	std::vector<Funcionario> vetFunc;
-
-	Funcionario func1;
-	func1.setNome("Alexandre");
-	vetFunc.push_back(func1);
-
-	std::vector<Funcionario>::iterator i;
-
-	i = vetFunc.begin();
-
-	std::cout << i->getNome() << std::endl;
 
 	Empresa emp1;
 	emp1.setNome("Netflix");

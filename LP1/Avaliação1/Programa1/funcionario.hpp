@@ -1,5 +1,7 @@
 #include <string>
 #include <iostream>
+#include <ostream>
+
 #include <time.h>
 
 using std::string;
@@ -31,4 +33,5 @@ public:
 	void getData();
 
 	bool operator==(Funcionario &f);
+	friend std::ostream& operator<<(std::ostream &O, Funcionario const f);
 };
