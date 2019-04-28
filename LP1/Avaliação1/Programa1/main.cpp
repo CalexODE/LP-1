@@ -1,11 +1,38 @@
-#include "funcionario.h"
+//#include "funcionario.hpp"
+#include "empresa.hpp"
+
+#include <vector>
 #include <iostream>
-#include "empresa.h"
 
 int main()
 {
 
 
+	Empresa emp1;
+	emp1.novoFuncionario("Alexandre", "123345567", 123.4);
+	emp1.mostraFuncionario(0);
+
+	emp1.novoFuncionario("Aline", "123345567", 234.3);
+	std::cout<< "hora de mostrar"<<std::endl;
+	emp1.mostraFuncionario(0);
+	emp1.mostraFuncionario(0);
+
+	/**
+	std::vector<Funcionario> vetFunc;
+
+	Funcionario func1;
+	func1.setNome("Alexandre");
+	vetFunc.push_back(func1);
+
+	std::vector<Funcionario>::iterator i;
+
+	i = vetFunc.begin();
+
+	std::cout << i->getNome() << std::endl;
+
+	Empresa emp1;
+	emp1.setNome("Netflix");
+	emp1.novoFuncionario();
 
 
 	Empresa emp;
@@ -31,5 +58,6 @@ int main()
 	{
 		std::cout << "FALSE" << std::endl; 
 	}
+	*/
 	return 0;
 }

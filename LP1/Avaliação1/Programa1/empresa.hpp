@@ -1,15 +1,16 @@
-#include <string>
-using std::string;
+#include "funcionario.hpp"
 
+#include <string>
 #include <iostream>
+#include <vector>
+using namespace std;
 
 class Empresa
 {
 private:
 	string nome;
 	string CNPJ;
-	//To Do
-	//lista de funcionario(list, vector)
+	vector<Funcionario> vetFunc;
 
 public:
 	Empresa();
@@ -20,4 +21,7 @@ public:
 
 	void setCNPJ(string CNPJ);
 	string getCNPJ();
+
+	void novoFuncionario(string nome, string cpf, float salario);
+	void mostraFuncionario(int n);
 };

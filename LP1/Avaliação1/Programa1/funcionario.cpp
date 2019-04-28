@@ -1,9 +1,18 @@
-#include "funcionario.h"
+#include "funcionario.hpp"
+
+//Construtores
 
 Funcionario::Funcionario()
 {
 	std::cout << "Funcionario OK!" << std::endl;
 }
+Funcionario::Funcionario(string nome, string cpf, float salario)
+{
+	setNome(nome);
+	setCpf(cpf);
+	setSalario(salario);
+}
+
 
 //Nome
 void Funcionario::setNome(string nome)
@@ -35,6 +44,7 @@ string Funcionario::getCpf()
 	return this->cpf;
 }
 
+//Sobrecarga ==
 bool Funcionario::operator==(Funcionario  &t)
 {
 	if(this->cpf == t.getCpf())

@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+
 using std::string;
 
 class Funcionario
@@ -14,7 +15,7 @@ private:
 
 public:
 	Funcionario();
-	Funcionario(float salario, string nome);
+	Funcionario(string nome, string cpf, float salario);
 
 	void setSalario(float salario);
 	float getSalario();
