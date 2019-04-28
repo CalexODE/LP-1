@@ -31,6 +31,9 @@ public:
 
 	//Alterar Implementação
 	void getData();
+	int getDia_ad();
+	int getMes_ad();
+	int getAno_ad();
 
 	bool operator==(Funcionario &f);
 	friend std::ostream& operator<<(std::ostream &O, Funcionario const f);

@@ -6,6 +6,9 @@
 #include <time.h>
 int main()
 {
+
+	std::vector<Empresa> vecEmp;
+
 	Empresa emp1;
 	emp1.novoFuncionario("Alexandre", "123345567", 123.4);
 	emp1.mostraFuncionario(0);
@@ -15,11 +18,19 @@ int main()
 	emp1.mostraFuncionario(1);
 	emp1.mostraFuncionario(0);
 
+	emp1.novoFuncionario("Fulano","3235123", 504.0);
 	emp1.tFuncionarios();
 
 	emp1.aumentoSalario(100.0);
 
+	emp1.tFuncionarios();
+
+	vecEmp.push_back(emp1);
+
+	std::cout << "Número De Funcionarios:" << emp1.numeroDeFuncionarios() << std::endl;
+
 	/**
+
 	std::vector<int> vetFunc;
 
 	//Funcionario func1;

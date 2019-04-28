@@ -61,6 +61,18 @@ void Funcionario::getData()
 {
 	std::cout<<" "<<dia_ad <<"/"<<mes_ad<<"/"<<ano_ad<<std::endl;
 }
+int Funcionario::getDia_ad()
+{
+	return this->dia_ad;
+}
+int Funcionario::getMes_ad()
+{
+	return this->mes_ad;
+}
+int Funcionario::getAno_ad()
+{
+	return this->ano_ad;
+}
 
 //Sobrecarga ==
 bool Funcionario::operator==(Funcionario  &t)

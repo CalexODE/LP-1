@@ -79,41 +79,67 @@ void Empresa::mostraFuncionario(int n)
 	(i+n)->getData();
 }
 
-void Empresa::tFuncionarios()
-{
-	vector<Funcionario>::iterator i;
-	i = vetFunc.begin();
-	//cout << vetFunc.size() << endl;
 
-	//int cont = 0;
-	//while (cont <= vetFunc.size() - 1)
-	//{
-	//	cout <<"cont: " << cont << endl;
-	//	cout << *(i+cont) << endl;
-	//	cont++;
 
-	//}
-
-	for (int cont = 0; cont <= vetFunc.size()-1; cont++)
-	{
-		cout << *(i+cont) << endl;
-		//cout <<"cont"<< cont << endl;
-	}
-	//cout << "Saiu!" << endl;
-}
-
+//Aumento de todos os funcionarios de uma empresa
+//Baseado em uma porcentagem
 void Empresa::aumentoSalario(float perc)
 {
 	vector<Funcionario>::iterator i;
 	i = vetFunc.begin();
 
-	float salario = i->getSalario();
-	cout << salario << endl; 
+	//float salario = i->getSalario();
+	//cout << salario << endl; 
 	for (int cont = 0; cont <= vetFunc.size()-1; cont++)
 	{
 
-		cout <<"Salario antes do aumento: "<< cont << "  "<< (i+cont)->getSalario()<<endl;
+		//cout <<"Salario antes do aumento: "<< cont << "  "<< (i+cont)->getSalario()<<endl;
 		(i+cont)->setSalario((i+cont)->getSalario() + (((i+cont)->getSalario()) * (perc/100)));
-		cout << "Salario Atual: " << (i+cont)->getSalario()<< endl;
+		//cout << "Salario Atual: " << (i+cont)->getSalario()<< endl;
 	}
+}
+
+void Empresa::tFuncionarios()
+{
+	vector<Funcionario>::iterator i;
+	i = vetFunc.begin();
+
+	for (int cont = 0; cont <= vetFunc.size()-1; cont++)
+	{
+		cout << *(i+cont) << endl;
+	}
+}
+
+//funcionarios de até 90 dias de admissão
+
+void Empresa::tFuncionariosNovos()
+{
+	vector<Funcionario>::iterator i;
+	i = vetFunc.begin();
+
+	time_t timer;
+	struct tm *horarioLocal;
+
+	time(&timer); // Obtem informações de data e hora
+	horarioLocal = localtime(&timer); // Converte a hora atual para a hora local
+
+	int dia = horarioLocal->tm_mday;
+	int mes = horarioLocal->tm_mon + 1;
+	int ano = horarioLocal->tm_year + 1900;
+	
+
+
+	bool mostrar = false;
+	for (int cont = 0; cont <= vetFunc.size()-1; cont++)
+	{
+		if ((i+cont)->getAno_ad())
+		{
+			cout << *(i+cont) << endl;
+		}
+	}
+}
+
+int Empresa::numeroDeFuncionarios()
+{
+	return vetFunc.size();
 }

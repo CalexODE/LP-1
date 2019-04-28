@@ -24,8 +24,12 @@ public:
 	string getCNPJ();
 
 	void novoFuncionario(string nome, string cpf, float salario);
-	void mostraFuncionario(int n);
+	void mostraFuncionario(int n);//Auxiliar
+	
 	void tFuncionarios();
+	void tFuncionariosNovos();
+
+	int numeroDeFuncionarios();
 
 	void aumentoSalario(float perc);
 };
