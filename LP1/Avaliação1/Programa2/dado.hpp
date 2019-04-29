@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include <ctime>
+#include <unistd.h>
+
 
 using namespace std;
 
@@ -17,6 +19,7 @@ public:
 	int getLados();
 
 	void setDados(int n);
+	int getNumDados();
 
 	int jogarDados();
 };

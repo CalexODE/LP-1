@@ -31,6 +31,7 @@ public:
 
 	//Alterar Implementação
 	void getData();
+	
 	int getDia_ad();
 	int getMes_ad();
 	int getAno_ad();

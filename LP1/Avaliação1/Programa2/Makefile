@@ -4,11 +4,11 @@ jogador.o: jogador.cpp jogador.hpp
 dado.o: dado.cpp dado.hpp
 	g++ dado.cpp -c
 
-jogo.o: jogo.cpp jogo.hpp jogador.o
-	g++ jogo.cpp jogador.o -c
+jogo.o: jogo.cpp jogo.hpp
+	g++ jogo.cpp -c
 
-main: main.cpp jogo.o dado.o
-	g++ main.cpp jogo.o dado.o -o main
+main: main.cpp dado.o jogador.o jogo.o
+	g++ main.cpp jogo.o dado.o jogador.o -o main
 
 clear:
 	rm *.o
