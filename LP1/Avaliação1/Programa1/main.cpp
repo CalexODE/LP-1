@@ -29,6 +29,7 @@ int main()
 
 	std::cout << "Número De Funcionarios:" << emp1.numeroDeFuncionarios() << std::endl;
 
+	emp1.tFuncionariosNovos();
 	/**
 
 	std::vector<int> vetFunc;

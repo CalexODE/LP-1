@@ -116,6 +116,7 @@ void Empresa::tFuncionariosNovos()
 {
 	vector<Funcionario>::iterator i;
 	i = vetFunc.begin();
+	double dias_admissao, dias_totais;
 
 	time_t timer;
 	struct tm *horarioLocal;
@@ -127,12 +128,13 @@ void Empresa::tFuncionariosNovos()
 	int mes = horarioLocal->tm_mon + 1;
 	int ano = horarioLocal->tm_year + 1900;
 	
-
+	dias_totais = (ano * 365) + (mes * 30) + dia;
 
 	bool mostrar = false;
 	for (int cont = 0; cont <= vetFunc.size()-1; cont++)
 	{
-		if ((i+cont)->getAno_ad())
+		dias_admissao = ((i+cont)->getAno_ad() * 365) + (i+cont)->getMes_ad() * 30 + ((i+cont)->getDia_ad());
+		if ((dias_totais - dias_admissao) <= 90)
 		{
 			cout << *(i+cont) << endl;
 		}
@@ -143,3 +145,4 @@ int Empresa::numeroDeFuncionarios()
 {
 	return vetFunc.size();
 }
+
