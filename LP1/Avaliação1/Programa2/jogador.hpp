@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ostream>
 #include <string>
 
 using namespace std;
@@ -15,4 +16,5 @@ public:
 
 	void setPontuacao(int pontuacao);
 	int getPontuacao();
+
 };

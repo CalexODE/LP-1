@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 
 using namespace std;
@@ -28,4 +29,10 @@ public:
 	void mostrarDado();//Para monitoramento
 
 	void jogarDado();
+
+	string getJogadorAtivos(int i);
+
+	void retirarJogador(int i);
+
+	
 };

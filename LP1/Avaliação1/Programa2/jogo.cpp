@@ -2,7 +2,7 @@
 
 oJogo::oJogo()
 {
-
+	this->valorAtual=0;
 }
 
 void oJogo::adicionarJogador(string nome)
@@ -41,4 +41,28 @@ void oJogo::jogarDado()
 }
 
 //altera para return string
-void getJogador
+string oJogo::getJogadorAtivos(int i)
+{
+	vector<Jogador>::iterator v;
+	v = vecJogadoresAtivos.begin();
+	return (v+i)->getNome();
+}
+
+
+void oJogo::retirarJogador(int i)
+{
+	cout << "retirar"<< endl;
+	vector<Jogador>::iterator jAtivos;
+	jAtivos = vecJogadoresAtivos.begin();
+
+	//cout << vecJogadoresAtivos.size() << endl;//tirar
+	vecJogadoresFora.push_back(*(jAtivos+i));
+
+	vecJogadoresAtivos.erase(jAtivos+i);
+	vector<Jogador>::iterator jFora;//tirar
+
+	//cout << vecJogadoresAtivos.size() << endl;//tirar
+	jFora = vecJogadoresFora.begin();//tirar
+
+	//cout <<"jogares fora"<< *jFora << endl;//tirar
+}

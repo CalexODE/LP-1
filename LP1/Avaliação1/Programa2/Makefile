@@ -7,8 +7,10 @@ dado.o: dado.cpp dado.hpp
 jogo.o: jogo.cpp jogo.hpp
 	g++ jogo.cpp -c
 
-main: main.cpp dado.o jogador.o jogo.o
-	g++ main.cpp jogo.o dado.o jogador.o -o main
+menu.o:menu.cpp menu.hpp
+	g++ menu.cpp -c
+main: main.cpp dado.o jogador.o jogo.o menu.o
+	g++ main.cpp jogo.o dado.o jogador.o menu.o -o main
 
 clear:
 	rm *.o
