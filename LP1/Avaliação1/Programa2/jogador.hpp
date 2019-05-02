@@ -19,4 +19,6 @@ public:
 	void setPontuacao(int pontuacao);
 	int getPontuacao();
 
+	void aumentarPontuacao(int pontuacao);
+
 };

@@ -13,8 +13,6 @@ private:
 	int nDados;
 
 public:
-	//Dado();
-	//Dado(int nLados, int nDados);
 	void setLados(int n);
 	int getLados();
 

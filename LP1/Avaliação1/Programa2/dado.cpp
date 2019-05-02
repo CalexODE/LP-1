@@ -1,16 +1,5 @@
 #include "dado.hpp"
-/**
-Dado::Dado()
-{
 
-}
-
-Dado::Dado(int nLados = 6, int nDados = 1)
-{
-	this->nLados = nLados;
-	this->nDados = nDados;
-}
-*/
 void Dado::setLados(int n)
 {
 	this->nLados = n;
@@ -39,7 +28,7 @@ int Dado::jogarDados()
 	    int menor = 1;
 	    int aleatorio = rand()%(maior-menor+1) + menor;
 	    somaDosDados += aleatorio;
-	   	std::cout << "Numero Aleatorio = " << aleatorio << std::endl;
+	   	std::cout << "Dado "<<i+1<<": "<< aleatorio<< std::endl;
 	   	usleep(1000000);//1 segundo = 1000000
 	}
 	return somaDosDados;

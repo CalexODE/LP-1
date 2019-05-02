@@ -37,9 +37,10 @@ public:
 	void jogarDado(int i);
 
 	//alterar nome
-	string getJogadorAtivos(int i);
+	string getNomeJogadorAtivo(int i);
+	int getPontuacaoJogadorAtivo(int i);
 
-	void retirarJogador(int i);
+	void retirarJogador(int i, int c);
 
 	void organizarVencedores();
 

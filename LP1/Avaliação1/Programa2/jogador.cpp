@@ -17,9 +17,14 @@ string Jogador::getNome()
 
 void Jogador::setPontuacao(int pontuacao)
 {
-	this->pontuacao += pontuacao;
+	this->pontuacao = pontuacao;
 }
 int Jogador::getPontuacao()
 {
 	return this->pontuacao;
+}
+
+void Jogador::aumentarPontuacao(int pontuacao)
+{
+	this->pontuacao += pontuacao;
 }
