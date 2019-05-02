@@ -1,11 +1,14 @@
 func.o:funcionario.cpp funcionario.h
 	g++ funcionario.cpp -c
 
-emp.o:empresa.cpp empresa.h funcionario.o
-	g++ empresa.cpp funcionario.o -c
+emp.o:empresa.cpp empresa.h
+	g++ empresa.cpp -c
 
-main: main.cpp funcionario.o empresa.o
-	g++ main.cpp funcionario.o empresa.o -o main
+menu.o:menu.cpp menu.hpp
+	g++ menu.cpp -c
+
+main: main.cpp funcionario.o empresa.o menu.o
+	g++ main.cpp funcionario.o empresa.o menu.o -o main
 
 clear:
 	rm *.o

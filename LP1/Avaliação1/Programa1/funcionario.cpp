@@ -1,10 +1,10 @@
 #include "funcionario.hpp"
 
-//Construtores
+//Construtor(es)
 
 Funcionario::Funcionario()
 {
-	std::cout << "Funcionario OK!" << std::endl;
+	//std::cout << "Funcionario OK!" << std::endl;
 }
 Funcionario::Funcionario(string nome, string cpf, float salario)
 {
@@ -22,7 +22,7 @@ Funcionario::Funcionario(string nome, string cpf, float salario)
   	mes_ad = horarioLocal->tm_mon + 1;
 	ano_ad = horarioLocal->tm_year + 1900;
 
-	std::cout<< dia_ad <<"/"<<mes_ad<<"/"<<ano_ad<<std::endl;
+	//std::cout<< dia_ad <<"/"<<mes_ad<<"/"<<ano_ad<<std::endl;
 }
 
 
@@ -87,7 +87,7 @@ bool Funcionario::operator==(Funcionario  &t)
 	}
 }
 
-//Sobrecarga <<
+//Sobrecarga do operador de inserção(<<)
 std::ostream& operator<<(std::ostream &O, Funcionario const f)
 {
 	O << "Nome: "<<f.nome << " CPF: " <<f.cpf <<" Salario: "<<f.salario;

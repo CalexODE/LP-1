@@ -23,8 +23,8 @@ public:
 	void setCNPJ(string CNPJ);
 	string getCNPJ();
 
-	void novoFuncionario(string nome, string cpf, float salario);
-	void mostraFuncionario(int n);//Auxiliar
+	int novoFuncionario(string nome, string cpf, float salario);
+	//void mostraFuncionario(int n);//Auxiliar
 	
 	void tFuncionarios();
 	void tFuncionariosNovos();

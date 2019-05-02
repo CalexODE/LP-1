@@ -1,12 +1,13 @@
 //#include "funcionario.hpp"
-#include "empresa.hpp"
+#include "menu.hpp"
 
-#include <vector>
-#include <iostream>
-#include <time.h>
+//#include <vector>
+//#include <iostream>
+//#include <time.h>
 int main()
 {
-
+	menu();
+	/**
 	std::vector<Empresa> vecEmp;
 
 	Empresa emp1;
@@ -30,7 +31,6 @@ int main()
 	std::cout << "Número De Funcionarios:" << emp1.numeroDeFuncionarios() << std::endl;
 
 	emp1.tFuncionariosNovos();
-	/**
 
 	std::vector<int> vetFunc;
 
@@ -85,7 +85,7 @@ int main()
 	else
 	{
 		std::cout << "FALSE" << std::endl; 
-	}
+	}		
 	*/
 	return 0;
 }
