@@ -5,7 +5,6 @@
 #include <vector>
 #include <string>
 
-
 using namespace std;
 
 class oJogo
@@ -13,6 +12,8 @@ class oJogo
 private:
 	vector<Jogador> vecJogadoresAtivos;
 	vector<Jogador> vecJogadoresFora;
+	vector<int> ordemDeVitoria;
+
 	Dado dado;
 	int nParaAtingir;
 	int valorAtual;
@@ -28,11 +29,20 @@ public:
 
 	void mostrarDado();//Para monitoramento
 
-	void jogarDado();
+	int pontuacaoDoJogador(int i);
 
+	int totalDeJogadores();
+	int totalDeJogadoresF();
+
+	void jogarDado(int i);
+
+	//alterar nome
 	string getJogadorAtivos(int i);
 
 	void retirarJogador(int i);
 
-	
+	void organizarVencedores();
+
+	string getNomeJogadorFora(int i);
+	int getPontuacaoJogadorFora(int i);
 };

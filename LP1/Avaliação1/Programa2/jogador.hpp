@@ -11,6 +11,8 @@ private:
 	int pontuacao;
 
 public:
+	Jogador();
+
 	void setNome(string nome);
 	string getNome();
 

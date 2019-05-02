@@ -1,5 +1,11 @@
 #include "jogador.hpp"
 
+Jogador::Jogador()
+{
+	this->pontuacao = 0;
+}
+
+
 void Jogador::setNome(string nome)
 {
 	this->nome = nome;
@@ -11,7 +17,7 @@ string Jogador::getNome()
 
 void Jogador::setPontuacao(int pontuacao)
 {
-	this->pontuacao = pontuacao;
+	this->pontuacao += pontuacao;
 }
 int Jogador::getPontuacao()
 {
