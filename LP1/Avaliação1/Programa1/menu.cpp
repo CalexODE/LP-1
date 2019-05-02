@@ -1,26 +1,27 @@
 #include "menu.hpp"
 
-int encontrarEmpresa();
+
+int encontrarEmpresa(string procurar);
 
 vector<Empresa> vecEmpresas;
 vector<Empresa>::iterator i;
 
 void menu()
 {
+	cout<<"Manipulação de empresas e funcionarios"<<endl<<endl;
 
-	cout<<"Ola, seja bem vindo!"<<endl;
-
+	//Variaveis para uso na manipulação das empresas
 	string nome;
 	string cnpj;
 	Empresa emp;
 	float percen_aumento;
 	int posicao_empresa;
 
+	//Variaveis para uso na manipulação dos funcionarios
 	string nome_Funcionaro;
 	string cpf_Funcionario;
 	float salario_Funcionario;
 	int sucesso;
-
 	float media_de_funcionarios;
 	int soma=0;
 
@@ -28,7 +29,6 @@ void menu()
 	{
 		if (vecEmpresas.size() == 0)
 		{
-			//Criar Função "criar Empresa"
 			cout<<"Ainda não ha empresas"<<endl<<endl;
 			cout<<"Adicionar Empresa:"<<endl<<"Nome: ";
 			cin>>nome;
@@ -68,26 +68,25 @@ void menu()
 					cin>>cnpj;
 					emp.setNome(nome);
 					emp.setCNPJ(cnpj);
-					vecEmpresas.push_back(emp);
+
+					posicao_empresa = encontrarEmpresa(cnpj);
+
+					if (posicao_empresa == -1)
+					{
+						vecEmpresas.push_back(emp);
+					}
+					else
+					{
+						cout<<"Empresa ja existente"<<endl;
+					}
 					break;
 				case 2:
-					/**
+
 					cout<<"Escolher Empresa(por cnpj): ";
 					cin>>procurar;
-					i = vecEmpresas.begin();
 
-					for (int cont = 0; cont < vecEmpresas.size(); cont++)
-					{
-						//cout<<"cont: "<< cont<<" quantidade de Emp: "<<vecEmpresas.size();
-						//cout<< " procurar: "<< procurar;
-						//cout<<" cnpj: "<<(i+cont)->getCNPJ()<<endl;
+					posicao_empresa = encontrarEmpresa(procurar);
 
-						if ((i+cont)->getCNPJ().compare(procurar)==0)
-						{
-						}
-					}
-					*/
-					posicao_empresa = encontrarEmpresa();
 					if (posicao_empresa == -1)
 					{
 						cout<<"Empresa Não encontrada"<<endl;
@@ -116,19 +115,16 @@ void menu()
 				case 3:
 					cout<<"Escolher Empresa(por cnpj): ";
 					cin>>procurar;
-					i = vecEmpresas.begin();
-
-					for (int cont = 0; cont < vecEmpresas.size(); cont++)
+					
+					posicao_empresa = encontrarEmpresa(procurar);
+					
+					if (posicao_empresa == -1)
 					{
-						//cout<<"cont: "<< cont<<" quantidade de Emp: "<<vecEmpresas.size();
-						//cout<< " procurar: "<< procurar;
-						//cout<<" cnpj: "<<(i+cont)->getCNPJ()<<endl;
-
-						if ((i+cont)->getCNPJ().compare(procurar)==0)
-						{
-							cout<<"Empresa "<<(i+cont)->getNome() <<endl;
-							vecEmpresas.erase(i+cont);
-						}
+						cout<<"Empresa Não encontrada"<<endl;
+					}
+					else
+					{
+						vecEmpresas.erase(i+posicao_empresa);
 					}
 					break;
 				case 4:
@@ -143,19 +139,16 @@ void menu()
 				case 5:
 					cout<<"Escolher Empresa(por cnpj): ";
 					cin>>procurar;
-					i = vecEmpresas.begin();
 
-					for (int cont = 0; cont < vecEmpresas.size(); cont++)
+					posicao_empresa = encontrarEmpresa(procurar);
+
+					if (posicao_empresa == -1)
 					{
-						cout<<"cont: "<< cont<<" quantidade de Emp: "<<vecEmpresas.size();
-						cout<< " procurar: "<< procurar;
-						cout<<" cnpj: "<<(i+cont)->getCNPJ()<<endl;
-
-						if ((i+cont)->getCNPJ().compare(procurar)==0)
-						{
-							cout<<"Empresa: "<<(i+cont)->getNome()<<endl;
-							(i+cont)->tFuncionarios();
-						}
+						cout<<"Empresa Não encontrada"<<endl;
+					}
+					else
+					{
+						(i+posicao_empresa)->tFuncionarios();
 					}
 					break;
 				case 6:
@@ -163,20 +156,18 @@ void menu()
 					cin>>procurar;
 					i = vecEmpresas.begin();
 
-					for (int cont = 0; cont < vecEmpresas.size(); cont++)
-					{
-						//cout<<"cont: "<< cont<<" quantidade de Emp: "<<vecEmpresas.size();
-						//cout<< " procurar: "<< procurar;
-						//cout<<" cnpj: "<<(i+cont)->getCNPJ()<<endl;
+					posicao_empresa = encontrarEmpresa(procurar);
 
-						if ((i+cont)->getCNPJ().compare(procurar)==0)
-						{
-							cout<<"Empresa: "<<(i+cont)->getNome() <<endl;
-							cout<<"Aumento em porcentagem: ";
-							cin>>percen_aumento;
-							(i+cont)->aumentoSalario(percen_aumento);
-						}
+					if (posicao_empresa == -1)
+					{
+						cout<<"Empresa Não encontrada"<<endl;
 					}
+					else
+					{
+						cout<<"Aumento em porcentagem: ";
+						cin>>percen_aumento;
+						(i+posicao_empresa)->aumentoSalario(percen_aumento);
+					}	
 					break;
 				case 7:
 					i = vecEmpresas.begin();
@@ -198,23 +189,12 @@ void menu()
 	}
 }
 
-void menuFuncionario()
+int encontrarEmpresa(string procurar)
 {
-	cout<<"menuFuncionario"<<endl;
-}
-int encontrarEmpresa()
-{
-	string procurar;
-	cout<<"Escolher Empresa(por cnpj): ";
-	cin>>procurar;
 	i = vecEmpresas.begin();
 
 	for (int cont = 0; cont < vecEmpresas.size(); cont++)
 	{
-//cout<<"cont: "<< cont<<" quantidade de Emp: "<<vecEmpresas.size();
-//cout<< " procurar: "<< procurar;
-//cout<<" cnpj: "<<(i+cont)->getCNPJ()<<endl;
-
 		if ((i+cont)->getCNPJ().compare(procurar)==0)
 		{
 			cout<<"Empresa "<<(i+cont)->getNome() <<endl;

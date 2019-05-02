@@ -5,7 +5,7 @@
 //Construtor(es)
 Empresa::Empresa()
 {
-	//std::cout << "Empresa OK!" << std::endl;
+
 }
 
 //Nome da empresa
@@ -38,9 +38,6 @@ int Empresa::novoFuncionario(string nome, string cpf, float salario)
 	ponteiroVec = vetFunc.begin();
 	bool existencia = false;
 
-
-	//cout << vetFunc.size()<< endl;
-	
 	if(vetFunc.size() == 0)
 	{
 		vetFunc.push_back(func);
@@ -50,10 +47,8 @@ int Empresa::novoFuncionario(string nome, string cpf, float salario)
 	{
 		for (int i = 0; i <= vetFunc.size(); i++)
 		{
-			//cout << "i: " << i <<" "<<vetFunc.size()<<endl;
 			if(*(ponteiroVec+i) == func)
 			{
-				//cout << "existe" << endl;
 				existencia = true;
 				break;
 			}
@@ -71,17 +66,6 @@ int Empresa::novoFuncionario(string nome, string cpf, float salario)
 
 }
 
-/*
-void Empresa::mostraFuncionario(int n)
-{
-	vector<Funcionario>::iterator i;
-	i = vetFunc.begin();
-	cout << " size: "<<vetFunc.size()<<endl;
-	cout<<"Nome: "<<(i+n)->getNome()<<" CPF: "<<(i+n)->getCpf()<<" Salario: "<<(i+n)->getSalario();
-	(i+n)->getData();
-}
-*/
-
 
 //Aumento de todos os funcionarios de uma empresa
 //Baseado em uma porcentagem
@@ -90,14 +74,9 @@ void Empresa::aumentoSalario(float perc)
 	vector<Funcionario>::iterator i;
 	i = vetFunc.begin();
 
-	//float salario = i->getSalario();
-	//cout << salario << endl; 
 	for (int cont = 0; cont < vetFunc.size(); cont++)
 	{
-
-		//cout <<"Salario antes do aumento: "<< cont << "  "<< (i+cont)->getSalario()<<endl;
 		(i+cont)->setSalario((i+cont)->getSalario() + (((i+cont)->getSalario()) * (perc/100)));
-		//cout << "Salario Atual: " << (i+cont)->getSalario()<< endl;
 	}
 }
 
@@ -112,8 +91,8 @@ void Empresa::tFuncionarios()
 	}
 }
 
-//funcionarios de até 90 dias de admissão
 
+//funcionarios de até 90 dias de admissão
 void Empresa::tFuncionariosNovos()
 {
 	vector<Funcionario>::iterator i;

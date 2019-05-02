@@ -1,10 +1,8 @@
-#include "empresa.hpp"
-
 #include <vector>
 #include <iostream>
-//#include <time.h>
+
+#include "empresa.hpp"
 
 using namespace std;
 
 void menu();
-void menuFuncionario();
