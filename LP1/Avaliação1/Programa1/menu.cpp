@@ -1,6 +1,8 @@
 #include "menu.hpp"
 
-
+//Funcção que verifica se uma empresa já existe
+//Uma empresa já existe se o cnpj já pertence a outra empresa
+//Retorna a posição da empresa no vetor caso exista, caso contrário retorna -1
 int encontrarEmpresa(string procurar);
 
 vector<Empresa> vecEmpresas;
@@ -43,6 +45,8 @@ void menu()
 			int escolha = 0;
 			string procurar;
 
+
+			//menu para escolha de opções
 			cout<<endl<<"Opções: "<<endl
 			<<"1 - Adicionar Nova Empresa"<<endl
 			<<"2 - Adicionar Funcionario à empresa"<<endl

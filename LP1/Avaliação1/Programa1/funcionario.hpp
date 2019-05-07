@@ -28,9 +28,6 @@ public:
 
 	void setCpf(string cpf);
 	string getCpf();
-
-	//Alterar Implementação
-	void getData();
 	
 	int getDia_ad();
 	int getMes_ad();

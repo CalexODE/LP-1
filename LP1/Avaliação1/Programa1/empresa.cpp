@@ -8,7 +8,7 @@ Empresa::Empresa()
 
 }
 
-//Nome da empresa
+//get e set do Nome da empresa
 void Empresa::setNome(string nome)
 {
 	this->nome = nome;
@@ -18,7 +18,7 @@ string Empresa::getNome()
 	return this->nome;
 }
 
-//CNPJ
+//get e set do CNPJ
 void Empresa::setCNPJ(string CNPJ)
 {
 	this->CNPJ = CNPJ;
@@ -29,7 +29,8 @@ string Empresa::getCNPJ()
 }
 
 
-//Adicionar novo funcionario
+//Adiciona novo funcionário
+//Retorna um inteiro "1" caso consiga adicionar, e "0" caso contrário 
 int Empresa::novoFuncionario(string nome, string cpf, float salario)
 {
 	Funcionario func(nome, cpf, salario);
@@ -38,11 +39,14 @@ int Empresa::novoFuncionario(string nome, string cpf, float salario)
 	ponteiroVec = vetFunc.begin();
 	bool existencia = false;
 
+	//Caso o vetor não tenha nenhum funcionário é adicionado sem verificação
 	if(vetFunc.size() == 0)
 	{
 		vetFunc.push_back(func);
 		return 1;
 	}
+
+	//verifica se há outro funcionário com o mesmo cpf na mesma empresa
 	else
 	{
 		for (int i = 0; i <= vetFunc.size(); i++)
@@ -68,7 +72,7 @@ int Empresa::novoFuncionario(string nome, string cpf, float salario)
 
 
 //Aumento de todos os funcionarios de uma empresa
-//Baseado em uma porcentagem
+//recebendo um float que represanta a porcentagem de aumento
 void Empresa::aumentoSalario(float perc)
 {
 	vector<Funcionario>::iterator i;
@@ -80,6 +84,7 @@ void Empresa::aumentoSalario(float perc)
 	}
 }
 
+//Exibe todos os funcionários de uma Empresa
 void Empresa::tFuncionarios()
 {
 	vector<Funcionario>::iterator i;
@@ -93,6 +98,7 @@ void Empresa::tFuncionarios()
 
 
 //funcionarios de até 90 dias de admissão
+//Obs: não funciona com precisão
 void Empresa::tFuncionariosNovos()
 {
 	vector<Funcionario>::iterator i;
@@ -122,6 +128,7 @@ void Empresa::tFuncionariosNovos()
 	}
 }
 
+//Retorna um int com a quantidade de funcionários na empresa
 int Empresa::numeroDeFuncionarios()
 {
 	return vetFunc.size();

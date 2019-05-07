@@ -2,16 +2,17 @@
 
 #include <string>
 #include <iostream>
-
 #include <vector>
+
 using namespace std;
 
 class Empresa
 {
 private:
-	string nome;
-	string CNPJ;
-	vector<Funcionario> vetFunc;
+
+	string nome; //Nome da empresa
+	string CNPJ; //CNPJ da empresa
+	vector<Funcionario> vetFunc; //Vetor que irá armazenar os funcionários
 
 public:
 	Empresa();
@@ -28,7 +29,7 @@ public:
 	void tFuncionarios();
 	void tFuncionariosNovos();
 
-	int numeroDeFuncionarios();
-
 	void aumentoSalario(float perc);
+
+	int numeroDeFuncionarios();
 };

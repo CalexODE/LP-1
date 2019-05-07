@@ -6,12 +6,14 @@ Funcionario::Funcionario()
 {
 	//std::cout << "Funcionario OK!" << std::endl;
 }
+
 Funcionario::Funcionario(string nome, string cpf, float salario)
 {
 	setNome(nome);
 	setCpf(cpf);
 	setSalario(salario);
 
+	//Obtençao da data atual para armazenar aos dados do funcionário
 	time_t timer;
   	struct tm *horarioLocal;
 
@@ -22,11 +24,10 @@ Funcionario::Funcionario(string nome, string cpf, float salario)
   	mes_ad = horarioLocal->tm_mon + 1;
 	ano_ad = horarioLocal->tm_year + 1900;
 
-	//std::cout<< dia_ad <<"/"<<mes_ad<<"/"<<ano_ad<<std::endl;
 }
 
 
-//Nome
+//get e set do Nome
 void Funcionario::setNome(string nome)
 {
 	this->nome = nome;
@@ -36,7 +37,7 @@ string Funcionario::getNome()
 	return this->nome;
 }
 
-//Salario
+//get e set do Salario
 void Funcionario::setSalario(float salario)
 {
 	this->salario = salario;
@@ -46,7 +47,7 @@ float Funcionario::getSalario()
 	return this->salario;
 }
 
-//CPF
+//get e set do CPF
 void Funcionario::setCpf(string cpf)
 {
 	this->cpf = cpf;
@@ -56,11 +57,7 @@ string Funcionario::getCpf()
 	return this->cpf;
 }
 
-//Data
-void Funcionario::getData()
-{
-	std::cout<<" "<<dia_ad <<"/"<<mes_ad<<"/"<<ano_ad<<std::endl;
-}
+//get do dia/mes/ano de admissão
 int Funcionario::getDia_ad()
 {
 	return this->dia_ad;
@@ -74,7 +71,8 @@ int Funcionario::getAno_ad()
 	return this->ano_ad;
 }
 
-//Sobrecarga ==
+//Sobrecarga do operador ==
+//Usado para comparação entre dois funcionários, que levará em consideração a iguadade em seus cpf's
 bool Funcionario::operator==(Funcionario  &t)
 {
 	if(this->cpf == t.getCpf())
@@ -88,6 +86,7 @@ bool Funcionario::operator==(Funcionario  &t)
 }
 
 //Sobrecarga do operador de inserção(<<)
+//ao ser chamado, funcionário irá retornar uma ostream com os seus dados
 std::ostream& operator<<(std::ostream &O, Funcionario const f)
 {
 	O << "Nome: "<<f.nome << " CPF: " <<f.cpf <<" Salario: "<<f.salario;
