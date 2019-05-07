@@ -10,24 +10,21 @@ using namespace std;
 class oJogo
 {
 private:
-	vector<Jogador> vecJogadoresAtivos;
-	vector<Jogador> vecJogadoresFora;
-	vector<int> ordemDeVitoria;
+	vector<Jogador> vecJogadoresAtivos;//Jogadores que estão na rodada
+	vector<Jogador> vecJogadoresFora;//Jogadores fora do rodada por perder o parar
 
 	Dado dado;
-	int nParaAtingir;
+	int nParaAtingir;//Valor máximo para atingir
 	int valorAtual;
 
 public:
 	oJogo();
 
 	void adicionarJogador(string nome);
-	void criarDado(int nLados, int nDados);
+	void criarDado(int nDados, int nLados);
 
 	void setNParaAtingir(int n);
 	int getNParaAtingir();
-
-	void mostrarDado();//Para monitoramento
 
 	int pontuacaoDoJogador(int i);
 
@@ -36,7 +33,6 @@ public:
 
 	void jogarDado(int i);
 
-	//alterar nome
 	string getNomeJogadorAtivo(int i);
 	int getPontuacaoJogadorAtivo(int i);
 

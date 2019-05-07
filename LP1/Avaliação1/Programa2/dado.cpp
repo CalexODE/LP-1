@@ -1,5 +1,6 @@
 #include "dado.hpp"
 
+//get e set do número de lados do dado
 void Dado::setLados(int n)
 {
 	this->nLados = n;
@@ -9,15 +10,18 @@ int Dado::getLados()
 	return this->nLados;
 }
 
+//get e set do número de dados
 void Dado::setDados(int n)
 {
 	this->nDados = n;
 }
-int Dado::getNumDados()
+int Dado::getDados()
 {
 	return this->nDados;
 }
 
+//Função para "jogar"(gera números aleatórios) os dados baseado no número de lados e quantidade de dados
+//Retorna a soma dos dados jogados
 int Dado::jogarDados()
 {
 	int somaDosDados = 0;

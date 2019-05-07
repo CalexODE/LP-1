@@ -9,15 +9,15 @@ using namespace std;
 class Dado
 {
 private:
-	int nLados;
-	int nDados;
+	int nLados;//Número de lados
+	int nDados;//Número de dados
 
 public:
 	void setLados(int n);
 	int getLados();
 
 	void setDados(int n);
-	int getNumDados();
+	int getDados();
 
 	int jogarDados();
 };
